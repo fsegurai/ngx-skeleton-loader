@@ -1,0 +1,381 @@
+[
+  {
+    "label": "Documentation Home",
+    "description": "Documentation for @fsegurai/ngx-skeleton-loader 22.0.0, an accessible, themeable skeleton placeholder component for Angular.",
+    "route": "content/README",
+    "tags": ["documentation", "overview", "angular"],
+    "headings": ["Quick path", "Sections", "Version"],
+    "excerpt": " renders lightweight placeholders that keep the layout stable while content loads.",
+    "breadcrumb": [
+      {
+        "label": "Home",
+        "route": "content/README"
+      }
+    ]
+  },
+  {
+    "label": "API Reference",
+    "description": "The component, provider, injection token, helpers and types exported by @fsegurai/ngx-skeleton-loader.",
+    "route": "content/api/README",
+    "tags": ["api", "overview"],
+    "excerpt": "API Reference\n\n| Page | Exports |\n|------|---------|\n| Skeleton Loader Component | ( ) |\n| provideSkeletonLoader | , , , , , , , , |\n\nEverything is...",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "API",
+        "route": "content/api/README"
+      }
+    ]
+  },
+  {
+    "label": "provideSkeletonLoader",
+    "description": "provideSkeletonLoader, the SKELETON_LOADER_CONFIG token, SKELETON_LOADER_DEFAULTS, mergeSkeletonLoaderConfig and the exported types.",
+    "route": "content/api/provide-skeleton-loader",
+    "tags": ["api", "providers"],
+    "headings": [
+      "provideSkeletonLoader(config?)",
+      "SKELETON_LOADER_CONFIG",
+      "mergeSkeletonLoaderConfig(base, override)",
+      "Types"
+    ],
+    "excerpt": "provideSkeletonLoader\n\nprovideSkeletonLoader(config?)\n\n \n\nProvides as the parent configuration merged with ( values are ignored).\nUse it in /...",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "provideSkeletonLoader",
+        "route": "content/api/provide-skeleton-loader"
+      }
+    ]
+  },
+  {
+    "label": "Skeleton Loader Component",
+    "description": "Selectors, inputs, defaults, host attributes and rendered markup of SkeletonLoaderComponent.",
+    "route": "content/api/skeleton-loader-component",
+    "tags": ["api", "component"],
+    "headings": ["Inputs", "Host", "Rendered items", "Examples", "Computed state"],
+    "excerpt": "| Change detection | ; all inputs are signal inputs.",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "Skeleton Loader Component",
+        "route": "content/api/skeleton-loader-component"
+      }
+    ]
+  },
+  {
+    "label": "Getting Started",
+    "description": "Install @fsegurai/ngx-skeleton-loader and render your first loading placeholder.",
+    "route": "content/getting-started/README",
+    "tags": ["getting-started", "overview"],
+    "excerpt": "Two steps take you from zero to a working skeleton loader.",
+    "breadcrumb": [
+      {
+        "label": "Getting Started",
+        "route": "content/getting-started"
+      },
+      {
+        "label": "Getting Started",
+        "route": "content/getting-started/README"
+      }
+    ]
+  },
+  {
+    "label": "Installation",
+    "description": "Install @fsegurai/ngx-skeleton-loader in an Angular 22 application; no other peer dependencies are required.",
+    "route": "content/getting-started/installation",
+    "tags": ["getting-started", "installation"],
+    "headings": ["Peer dependencies", "Compatibility", "Next step"],
+    "excerpt": "Installation\n\nInstall the library with your package manager:\n\n \n\nPeer dependencies\n\nThe package only expects the Angular packages every application...",
+    "breadcrumb": [
+      {
+        "label": "Getting Started",
+        "route": "content/getting-started"
+      },
+      {
+        "label": "Installation",
+        "route": "content/getting-started/installation"
+      }
+    ]
+  },
+  {
+    "label": "Quick Start",
+    "description": "Import SkeletonLoaderComponent, render placeholders while data loads and optionally set application-wide defaults.",
+    "route": "content/getting-started/quick-start",
+    "tags": ["getting-started", "quick-start"],
+    "headings": [
+      "1. Import the component",
+      "2. Show it while data loads",
+      "3. Optional: set defaults once",
+      "Where to go next"
+    ],
+    "excerpt": " is standalone: add it to the of the component that shows the placeholder.",
+    "breadcrumb": [
+      {
+        "label": "Getting Started",
+        "route": "content/getting-started"
+      },
+      {
+        "label": "Quick Start",
+        "route": "content/getting-started/quick-start"
+      }
+    ]
+  },
+  {
+    "label": "Guides",
+    "description": "Task-oriented guides for appearances, animations, theming, global configuration, loading states and accessibility.",
+    "route": "content/guides/README",
+    "tags": ["guides", "overview"],
+    "excerpt": "Guides\n\n| Guide | Use it when |\n|-------|-------------|\n| Appearances | You choose the shape of the placeholders: lines, circles, squares or your own...",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Guides",
+        "route": "content/guides/README"
+      }
+    ]
+  },
+  {
+    "label": "Accessibility",
+    "description": "The polite status region, hidden loading text, labels for each loader, reduced motion and announcing completion.",
+    "route": "content/guides/accessibility",
+    "tags": ["guides", "accessibility"],
+    "headings": [
+      "What the component renders",
+      "Labeling each loader",
+      "Several loaders in one area",
+      "Announcing completion",
+      "Reduced motion",
+      "Checklist"
+    ],
+    "excerpt": "| Host | One polite live region per loader, marked , named by .",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Accessibility",
+        "route": "content/guides/accessibility"
+      }
+    ]
+  },
+  {
+    "label": "Animations",
+    "description": "The progress and pulse animations, their dark variants, disabling animations and reduced-motion support.",
+    "route": "content/guides/animations",
+    "tags": ["guides", "animation"],
+    "headings": ["Turning animations off", "Timing and colors", "Reduced motion", "Setting a default animation"],
+    "excerpt": "The input sets the effect of every item. Unknown values render without animation.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Animations",
+        "route": "content/guides/animations"
+      }
+    ]
+  },
+  {
+    "label": "Appearances",
+    "description": "Line, circle, square and custom-content placeholders, the count input and sizing of shapes.",
+    "route": "content/guides/appearances",
+    "tags": ["guides", "appearance"],
+    "headings": ["Lines", "Circles and squares", "Count", "Custom content", "Combining shapes"],
+    "excerpt": "The input sets the shape of every item. Unknown values fall back to .",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Appearances",
+        "route": "content/guides/appearances"
+      }
+    ]
+  },
+  {
+    "label": "Configuration",
+    "description": "Application-wide and route-level defaults with provideSkeletonLoader, the precedence rules and component-level overrides.",
+    "route": "content/guides/configuration",
+    "tags": ["guides", "configuration"],
+    "headings": [
+      "Application-wide defaults",
+      "Precedence",
+      "Route-level defaults",
+      "Component-level defaults",
+      "Reading the configuration"
+    ],
+    "excerpt": "Every input of can be given a default with .",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Configuration",
+        "route": "content/guides/configuration"
+      }
+    ]
+  },
+  {
+    "label": "Loading States",
+    "description": "Swap skeletons and content with @if, @defer and resources, change inputs at runtime and sketch complex layouts with custom-content.",
+    "route": "content/guides/dynamic-content",
+    "tags": ["guides", "loading-state"],
+    "headings": [
+      "With @if and a signal",
+      "With a resource",
+      "With @defer",
+      "Changing inputs at runtime",
+      "Sketching a complex layout",
+      "Tips"
+    ],
+    "excerpt": "A skeleton is only useful while the real content is missing. These patterns render it exactly then.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Loading States",
+        "route": "content/guides/dynamic-content"
+      }
+    ]
+  },
+  {
+    "label": "Performance",
+    "description": "What many loaders cost, how offscreen loaders stop animating, and how to keep large lists fast.",
+    "route": "content/guides/performance",
+    "tags": ["guides", "performance"],
+    "headings": ["Many loaders on one page", "Rendering cost"],
+    "excerpt": "Every animated skeleton costs style and compositing work on every frame, whether it is visible or not.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Performance",
+        "route": "content/guides/performance"
+      }
+    ]
+  },
+  {
+    "label": "Theming",
+    "description": "Restyle skeleton items with --ngx-skeleton-loader-* CSS custom properties, the theme input and a provider theme with extendsFromRoot.",
+    "route": "content/guides/theming",
+    "tags": ["guides", "theming"],
+    "headings": ["CSS custom properties", "Dark mode", "The theme input", "A theme for every loader", "Host class"],
+    "excerpt": "Theming\n\nThere are two ways to style the items, and they combine:\n\nCSS custom properties: set them on any ancestor (or on ) to restyle many loaders...",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Theming",
+        "route": "content/guides/theming"
+      }
+    ]
+  },
+  {
+    "label": "Migration",
+    "description": "Upgrade notes between versions of @fsegurai/ngx-skeleton-loader.",
+    "route": "content/migration/README",
+    "tags": ["migration", "overview"],
+    "excerpt": "Migration\n\n1.0.0-alpha to 22.0: Angular 22, standalone import and instead of the\n NgModule, one accessible status region, for circles and renamed...",
+    "breadcrumb": [
+      {
+        "label": "Migration",
+        "route": "content/migration"
+      },
+      {
+        "label": "Migration",
+        "route": "content/migration/README"
+      }
+    ]
+  },
+  {
+    "label": "From 1.0.0-alpha to 22.0",
+    "description": "Breaking changes when upgrading @fsegurai/ngx-skeleton-loader from the unreleased 1.0.0-alpha.0 to 22.0.0.",
+    "route": "content/migration/alpha-to-22",
+    "tags": ["migration"],
+    "headings": [
+      "Requirements",
+      "Breaking changes",
+      "Step by step",
+      "1. Replace the module",
+      "2. Rename the provider",
+      "3. Update tests and styles that targeted the old markup",
+      "4. Check circle sizes",
+      "New features"
+    ],
+    "excerpt": "From 1.0.0-alpha to 22.0\n\n22.0.0 is the first release on the new version scheme: the major version tracks Angular. It replaces the unreleased\n...",
+    "breadcrumb": [
+      {
+        "label": "Migration",
+        "route": "content/migration"
+      },
+      {
+        "label": "From 1.0.0-alpha to 22.0",
+        "route": "content/migration/alpha-to-22"
+      }
+    ]
+  },
+  {
+    "label": "Release Notes",
+    "description": "What 22.0.0 of @fsegurai/ngx-skeleton-loader added and changed, with links to the migration guide.",
+    "route": "content/release-notes/README",
+    "tags": ["release-notes", "changelog"],
+    "excerpt": "| What's new in 22.0.0 | The highlights of this release, with short examples.",
+    "breadcrumb": [
+      {
+        "label": "Release Notes",
+        "route": "content/release-notes"
+      },
+      {
+        "label": "Release Notes",
+        "route": "content/release-notes/README"
+      }
+    ]
+  },
+  {
+    "label": "What's New in 22.0.0",
+    "description": "The highlights of 22.0.0, the first release on the Angular-aligned version scheme, with a standalone component, provideSkeletonLoader, an accessible status region and CSS variable theming.",
+    "route": "content/release-notes/whats-new",
+    "tags": ["release-notes", "22.0.0"],
+    "headings": [
+      "Angular 22, standalone and zoneless",
+      "provideSkeletonLoader",
+      "One accessible status region",
+      "Theming with CSS variables",
+      "Smaller fixes",
+      "Documentation and playground"
+    ],
+    "excerpt": "What's New in 22.0.0\n\n⚠️ Upgrade notes. 22.0.0 replaces the unreleased preview: the NgModule is gone and the\naccessibility markup changed. Read From...",
+    "breadcrumb": [
+      {
+        "label": "Release Notes",
+        "route": "content/release-notes"
+      },
+      {
+        "label": "What's New in 22.0.0",
+        "route": "content/release-notes/whats-new"
+      }
+    ]
+  }
+]
