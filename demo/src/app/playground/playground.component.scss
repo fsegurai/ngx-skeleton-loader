@@ -1,0 +1,103 @@
+@use '../../scss/media-queries' as mq;
+
+:host {
+  display: block;
+}
+
+.playground {
+  align-items: start;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+
+  @include mq.lt-md {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.playground-controls mat-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 8px 0 0;
+}
+
+mat-button-toggle-group {
+  flex-wrap: wrap;
+}
+
+.control-row {
+  align-items: baseline;
+  display: flex;
+  gap: 16px;
+
+  mat-form-field {
+    flex: 0 1 140px;
+  }
+}
+
+.slider-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+
+  &--disabled {
+    opacity: 0.5;
+  }
+}
+
+.color-label {
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  gap: 8px;
+
+  input {
+    block-size: 32px;
+    border: 0;
+    inline-size: 48px;
+    padding: 0;
+  }
+}
+
+.playground-output {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  position: sticky;
+  top: 64px;
+
+  @include mq.lt-md {
+    position: static;
+  }
+
+  mat-card-header {
+    align-items: center;
+  }
+}
+
+.copy-button {
+  margin-left: auto;
+}
+
+.playground-preview {
+  min-height: 120px;
+  padding-top: 16px;
+}
+
+.custom-shape {
+  display: block;
+  fill: var(--ngx-skeleton-loader-color, rgb(239 241 246));
+}
+
+.playground-snippet {
+  font-size: 13px;
+  margin: 0;
+  overflow-x: auto;
+}

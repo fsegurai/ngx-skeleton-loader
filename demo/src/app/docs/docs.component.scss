@@ -1,0 +1,81 @@
+@use '../../scss/media-queries' as mq;
+
+:host {
+  display: block;
+}
+
+.docs-layout {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 220px minmax(0, 1fr);
+
+  @include mq.lt-md {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.docs-nav {
+  align-self: start;
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
+  position: sticky;
+  top: 64px;
+
+  @include mq.lt-md {
+    max-height: none;
+    position: static;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .docs-nav__list {
+      padding-left: 12px;
+    }
+  }
+
+  &__group {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    font-weight: 600;
+    gap: 6px;
+    letter-spacing: 0.04em;
+    margin: 16px 0 4px;
+    opacity: 0.7;
+    text-transform: uppercase;
+
+    .mat-icon {
+      font-size: 18px;
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  &__link {
+    border-radius: 4px;
+    display: block;
+    font-size: 14px;
+    padding: 4px 8px;
+
+    &--active {
+      font-weight: 600;
+    }
+  }
+}
+
+.docs-skeleton {
+  display: block;
+  padding-top: 8px;
+}
+
+.docs-page {
+  display: block;
+  min-height: 50vh;
+
+  &--loading {
+    display: none;
+  }
+}

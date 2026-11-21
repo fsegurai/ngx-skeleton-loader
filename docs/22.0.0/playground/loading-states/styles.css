@@ -1,0 +1,111 @@
+/* The preview gives the page its theme (--pg-* variables); the skeletons follow it through their CSS variables. */
+body {
+  margin: 0;
+  background: var(--pg-bg);
+  color: var(--pg-text);
+  font-family: var(--pg-font);
+}
+
+:root {
+  --ngx-skeleton-loader-color: color-mix(in srgb, var(--pg-text) 10%, var(--pg-bg));
+  --ngx-skeleton-loader-highlight: color-mix(in srgb, var(--pg-bg) 70%, transparent);
+  --ngx-skeleton-loader-height: 44px;
+}
+
+main {
+  max-width: 560px;
+  padding: 24px 32px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+}
+
+h2 {
+  margin: 24px 0 8px;
+  font-size: 1rem;
+}
+
+.hint {
+  margin: 0 0 12px;
+  color: var(--pg-text-muted);
+}
+
+button {
+  padding: 6px 14px;
+  border: 1px solid var(--pg-primary);
+  border-radius: var(--pg-radius);
+  background: var(--pg-primary);
+  color: var(--pg-bg);
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.team {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Same height as a skeleton line (44px + 10px gap), so nothing jumps when the data arrives. */
+.team li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  height: 44px;
+  margin-block-end: 10px;
+  font-size: 0.85rem;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--pg-primary);
+  color: var(--pg-bg);
+  font-weight: 600;
+}
+
+.card {
+  padding: 12px;
+  border: 1px solid var(--pg-border);
+  border-radius: var(--pg-radius);
+  background: var(--pg-surface);
+}
+
+.card p {
+  margin: 12px 0 0;
+}
+
+.card__cover {
+  display: grid;
+  place-items: center;
+  height: 120px;
+  border-radius: var(--pg-radius);
+  background: color-mix(in srgb, var(--pg-primary) 20%, var(--pg-surface));
+  font-weight: 600;
+}
+
+/* The skeleton card reuses the loader color, so it follows the theme too. */
+.card--skeleton .card__cover,
+.card--skeleton .bar {
+  background: var(--ngx-skeleton-loader-color);
+}
+
+.bar {
+  height: 12px;
+  margin-top: 12px;
+  border-radius: 6px;
+}
+
+.bar--short {
+  width: 60%;
+}

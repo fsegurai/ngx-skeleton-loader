@@ -1,0 +1,515 @@
+[
+  {
+    "label": "Documentation Home",
+    "description": "Documentation for @fsegurai/ngx-skeleton-loader 22.0.0, an accessible, themeable skeleton placeholder component for Angular.",
+    "route": "content/README",
+    "tags": ["documentation", "overview", "angular"],
+    "order": 0,
+    "breadcrumbTitle": "Home",
+    "keywords": ["skeleton", "loader", "placeholder", "loading state"],
+    "icon": "home",
+    "breadcrumb": [
+      {
+        "label": "Home",
+        "route": "content/README"
+      }
+    ]
+  },
+  {
+    "label": "Getting Started",
+    "route": "content/getting-started",
+    "isParent": true,
+    "breadcrumb": [
+      {
+        "label": "Getting Started",
+        "route": "content/getting-started"
+      }
+    ],
+    "order": 1,
+    "icon": "rocket_launch",
+    "children": [
+      {
+        "label": "Getting Started",
+        "description": "Install @fsegurai/ngx-skeleton-loader and render your first loading placeholder.",
+        "route": "content/getting-started/README",
+        "tags": ["getting-started", "overview"],
+        "order": 1,
+        "breadcrumbTitle": "Getting Started",
+        "keywords": ["setup", "first steps"],
+        "icon": "rocket_launch",
+        "breadcrumb": [
+          {
+            "label": "Getting Started",
+            "route": "content/getting-started"
+          },
+          {
+            "label": "Getting Started",
+            "route": "content/getting-started/README"
+          }
+        ]
+      },
+      {
+        "label": "Installation",
+        "description": "Install @fsegurai/ngx-skeleton-loader in an Angular 22 application; no other peer dependencies are required.",
+        "route": "content/getting-started/installation",
+        "tags": ["getting-started", "installation"],
+        "order": 1,
+        "keywords": ["npm", "bun", "peer dependencies", "zoneless"],
+        "icon": "download",
+        "breadcrumb": [
+          {
+            "label": "Getting Started",
+            "route": "content/getting-started"
+          },
+          {
+            "label": "Installation",
+            "route": "content/getting-started/installation"
+          }
+        ]
+      },
+      {
+        "label": "Quick Start",
+        "description": "Import SkeletonLoaderComponent, render placeholders while data loads and optionally set application-wide defaults.",
+        "route": "content/getting-started/quick-start",
+        "tags": ["getting-started", "quick-start"],
+        "order": 2,
+        "keywords": ["standalone", "import", "count", "provideSkeletonLoader"],
+        "icon": "bolt",
+        "breadcrumb": [
+          {
+            "label": "Getting Started",
+            "route": "content/getting-started"
+          },
+          {
+            "label": "Quick Start",
+            "route": "content/getting-started/quick-start"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Guides",
+    "route": "content/guides",
+    "isParent": true,
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      }
+    ],
+    "order": 2,
+    "icon": "menu_book",
+    "children": [
+      {
+        "label": "Appearances",
+        "description": "Line, circle, square and custom-content placeholders, the count input and sizing of shapes.",
+        "route": "content/guides/appearances",
+        "tags": ["guides", "appearance"],
+        "order": 1,
+        "keywords": ["line", "circle", "square", "custom-content", "count", "size", "avatar"],
+        "icon": "category",
+        "breadcrumb": [
+          {
+            "label": "Guides",
+            "route": "content/guides"
+          },
+          {
+            "label": "Appearances",
+            "route": "content/guides/appearances"
+          }
+        ]
+      },
+      {
+        "label": "Animations",
+        "description": "The progress and pulse animations, their dark variants, disabling animations and reduced-motion support.",
+        "route": "content/guides/animations",
+        "tags": ["guides", "animation"],
+        "order": 2,
+        "keywords": [
+          "progress",
+          "progress-dark",
+          "pulse",
+          "pulse-dark",
+          "shimmer",
+          "prefers-reduced-motion",
+          "duration"
+        ],
+        "icon": "animation",
+        "breadcrumb": [
+          {
+            "label": "Guides",
+            "route": "content/guides"
+          },
+          {
+            "label": "Animations",
+            "route": "content/guides/animations"
+          }
+        ]
+      },
+      {
+        "label": "Guides",
+        "description": "Task-oriented guides for appearances, animations, theming, global configuration, loading states and accessibility.",
+        "route": "content/guides/README",
+        "tags": ["guides", "overview"],
+        "order": 2,
+        "breadcrumbTitle": "Guides",
+        "keywords": ["how to"],
+        "icon": "menu_book",
+        "breadcrumb": [
+          {
+            "label": "Guides",
+            "route": "content/guides"
+          },
+          {
+            "label": "Guides",
+            "route": "content/guides/README"
+          }
+        ]
+      },
+      {
+        "label": "Theming",
+        "description": "Restyle skeleton items with --ngx-skeleton-loader-* CSS custom properties, the theme input and a provider theme with extendsFromRoot.",
+        "route": "content/guides/theming",
+        "tags": ["guides", "theming"],
+        "order": 3,
+        "keywords": ["css variables", "custom properties", "dark mode", "theme", "extendsFromRoot", "inline styles"],
+        "icon": "palette",
+        "breadcrumb": [
+          {
+            "label": "Guides",
+            "route": "content/guides"
+          },
+          {
+            "label": "Theming",
+            "route": "content/guides/theming"
+          }
+        ]
+      },
+      {
+        "label": "Configuration",
+        "description": "Application-wide and route-level defaults with provideSkeletonLoader, the precedence rules and component-level overrides.",
+        "route": "content/guides/configuration",
+        "tags": ["guides", "configuration"],
+        "order": 4,
+        "keywords": [
+          "provideSkeletonLoader",
+          "SKELETON_LOADER_CONFIG",
+          "defaults",
+          "precedence",
+          "route providers",
+          "mergeSkeletonLoaderConfig"
+        ],
+        "icon": "tune",
+        "breadcrumb": [
+          {
+            "label": "Guides",
+            "route": "content/guides"
+          },
+          {
+            "label": "Configuration",
+            "route": "content/guides/configuration"
+          }
+        ]
+      },
+      {
+        "label": "Loading States",
+        "description": "Swap skeletons and content with @if, @defer and resources, change inputs at runtime and sketch complex layouts with custom-content.",
+        "route": "content/guides/dynamic-content",
+        "tags": ["guides", "loading-state"],
+        "order": 5,
+        "keywords": [
+          "@if",
+          "@defer",
+          "@placeholder",
+          "@loading",
+          "resource",
+          "httpResource",
+          "signals",
+          "custom-content"
+        ],
+        "icon": "hourglass_empty",
+        "breadcrumb": [
+          {
+            "label": "Guides",
+            "route": "content/guides"
+          },
+          {
+            "label": "Loading States",
+            "route": "content/guides/dynamic-content"
+          }
+        ]
+      },
+      {
+        "label": "Accessibility",
+        "description": "The polite status region, hidden loading text, labels for each loader, reduced motion and announcing completion.",
+        "route": "content/guides/accessibility",
+        "tags": ["guides", "accessibility"],
+        "order": 6,
+        "keywords": [
+          "aria",
+          "role status",
+          "aria-live",
+          "aria-busy",
+          "screen reader",
+          "prefers-reduced-motion",
+          "a11y"
+        ],
+        "icon": "accessibility_new",
+        "breadcrumb": [
+          {
+            "label": "Guides",
+            "route": "content/guides"
+          },
+          {
+            "label": "Accessibility",
+            "route": "content/guides/accessibility"
+          }
+        ]
+      },
+      {
+        "label": "Performance",
+        "description": "What many loaders cost, how offscreen loaders stop animating, and how to keep large lists fast.",
+        "route": "content/guides/performance",
+        "tags": ["guides", "performance"],
+        "order": 7,
+        "keywords": [
+          "performance",
+          "fps",
+          "many skeletons",
+          "list",
+          "table",
+          "IntersectionObserver",
+          "offscreen",
+          "content-visibility"
+        ],
+        "icon": "speed",
+        "breadcrumb": [
+          {
+            "label": "Guides",
+            "route": "content/guides"
+          },
+          {
+            "label": "Performance",
+            "route": "content/guides/performance"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "API",
+    "route": "content/api",
+    "isParent": true,
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      }
+    ],
+    "order": 3,
+    "icon": "api",
+    "children": [
+      {
+        "label": "Skeleton Loader Component",
+        "description": "Selectors, inputs, defaults, host attributes and rendered markup of SkeletonLoaderComponent.",
+        "route": "content/api/skeleton-loader-component",
+        "tags": ["api", "component"],
+        "order": 1,
+        "keywords": [
+          "SkeletonLoaderComponent",
+          "ngx-skeleton-loader",
+          "inputs",
+          "count",
+          "appearance",
+          "animation",
+          "size",
+          "theme",
+          "ariaLabel",
+          "loadingText"
+        ],
+        "icon": "widgets",
+        "breadcrumb": [
+          {
+            "label": "API",
+            "route": "content/api"
+          },
+          {
+            "label": "Skeleton Loader Component",
+            "route": "content/api/skeleton-loader-component"
+          }
+        ]
+      },
+      {
+        "label": "provideSkeletonLoader",
+        "description": "provideSkeletonLoader, the SKELETON_LOADER_CONFIG token, SKELETON_LOADER_DEFAULTS, mergeSkeletonLoaderConfig and the exported types.",
+        "route": "content/api/provide-skeleton-loader",
+        "tags": ["api", "providers"],
+        "order": 2,
+        "keywords": [
+          "provideSkeletonLoader",
+          "SKELETON_LOADER_CONFIG",
+          "SKELETON_LOADER_DEFAULTS",
+          "mergeSkeletonLoaderConfig",
+          "SkeletonLoaderConfig",
+          "SkeletonLoaderTheme"
+        ],
+        "icon": "extension",
+        "breadcrumb": [
+          {
+            "label": "API",
+            "route": "content/api"
+          },
+          {
+            "label": "provideSkeletonLoader",
+            "route": "content/api/provide-skeleton-loader"
+          }
+        ]
+      },
+      {
+        "label": "API Reference",
+        "description": "The component, provider, injection token, helpers and types exported by @fsegurai/ngx-skeleton-loader.",
+        "route": "content/api/README",
+        "tags": ["api", "overview"],
+        "order": 3,
+        "breadcrumbTitle": "API",
+        "keywords": ["reference", "exports"],
+        "icon": "api",
+        "breadcrumb": [
+          {
+            "label": "API",
+            "route": "content/api"
+          },
+          {
+            "label": "API",
+            "route": "content/api/README"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Migration",
+    "route": "content/migration",
+    "isParent": true,
+    "breadcrumb": [
+      {
+        "label": "Migration",
+        "route": "content/migration"
+      }
+    ],
+    "order": 4,
+    "icon": "upgrade",
+    "children": [
+      {
+        "label": "From 1.0.0-alpha to 22.0",
+        "description": "Breaking changes when upgrading @fsegurai/ngx-skeleton-loader from the unreleased 1.0.0-alpha.0 to 22.0.0.",
+        "route": "content/migration/alpha-to-22",
+        "tags": ["migration"],
+        "order": 1,
+        "keywords": [
+          "angular 22",
+          "breaking changes",
+          "upgrade",
+          "SkeletonLoaderModule",
+          "forRoot",
+          "provideNgxSkeletonLoader",
+          "progressbar"
+        ],
+        "icon": "swap_horiz",
+        "breadcrumb": [
+          {
+            "label": "Migration",
+            "route": "content/migration"
+          },
+          {
+            "label": "From 1.0.0-alpha to 22.0",
+            "route": "content/migration/alpha-to-22"
+          }
+        ]
+      },
+      {
+        "label": "Migration",
+        "description": "Upgrade notes between versions of @fsegurai/ngx-skeleton-loader.",
+        "route": "content/migration/README",
+        "tags": ["migration", "overview"],
+        "order": 4,
+        "breadcrumbTitle": "Migration",
+        "keywords": ["upgrade", "breaking changes"],
+        "icon": "upgrade",
+        "breadcrumb": [
+          {
+            "label": "Migration",
+            "route": "content/migration"
+          },
+          {
+            "label": "Migration",
+            "route": "content/migration/README"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Release Notes",
+    "route": "content/release-notes",
+    "isParent": true,
+    "breadcrumb": [
+      {
+        "label": "Release Notes",
+        "route": "content/release-notes"
+      }
+    ],
+    "order": 5,
+    "icon": "new_releases",
+    "children": [
+      {
+        "label": "What's New in 22.0.0",
+        "description": "The highlights of 22.0.0, the first release on the Angular-aligned version scheme, with a standalone component, provideSkeletonLoader, an accessible status region and CSS variable theming.",
+        "route": "content/release-notes/whats-new",
+        "tags": ["release-notes", "22.0.0"],
+        "order": 1,
+        "keywords": [
+          "what's new",
+          "angular 22",
+          "standalone",
+          "provideSkeletonLoader",
+          "css variables",
+          "accessibility",
+          "zoneless"
+        ],
+        "icon": "auto_awesome",
+        "breadcrumb": [
+          {
+            "label": "Release Notes",
+            "route": "content/release-notes"
+          },
+          {
+            "label": "What's New in 22.0.0",
+            "route": "content/release-notes/whats-new"
+          }
+        ]
+      },
+      {
+        "label": "Release Notes",
+        "description": "What 22.0.0 of @fsegurai/ngx-skeleton-loader added and changed, with links to the migration guide.",
+        "route": "content/release-notes/README",
+        "tags": ["release-notes", "changelog"],
+        "order": 5,
+        "breadcrumbTitle": "Release Notes",
+        "keywords": ["release notes", "what's new", "22.0.0"],
+        "icon": "new_releases",
+        "breadcrumb": [
+          {
+            "label": "Release Notes",
+            "route": "content/release-notes"
+          },
+          {
+            "label": "Release Notes",
+            "route": "content/release-notes/README"
+          }
+        ]
+      }
+    ]
+  }
+]

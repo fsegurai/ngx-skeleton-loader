@@ -1,0 +1,60 @@
+<div class="docs-layout">
+  <nav class="docs-nav" aria-label="Documentation">
+    <ng-container [ngTemplateOutlet]="tree" [ngTemplateOutletContext]="{ $implicit: nav() }"/>
+  </nav>
+
+  <app-scrollspy-nav-layout class="docs-content" [headings]="headings()">
+    @if (notFound()) {
+      <h1>Page not found</h1>
+      <p>There is no documentation page for <code>{{ page() }}</code>.</p>
+    } @else if (loadError()) {
+      <h1>Page could not be loaded</h1>
+      <p role="alert">The documentation page <code>{{ page() || 'README' }}</code> could not be loaded. Check your
+        connection and try again.</p>
+      <button class="docs-retry" mat-stroked-button type="button" (click)="retry()">Retry</button>
+    } @else {
+      @if (loading()) {
+        <div class="docs-skeleton">
+          <ngx-skeleton-loader ariaLabel="Loading documentation page" [theme]="{ width: '45%', height: '36px' }"/>
+          <ngx-skeleton-loader count="4"/>
+          <ngx-skeleton-loader [theme]="{ width: '70%' }"/>
+          <ngx-skeleton-loader [theme]="{ height: '120px' }"/>
+        </div>
+      }
+      <markdown class="docs-page"
+                [class.docs-page--loading]="loading()"
+                [src]="src()"
+                [frontMatter]="true"
+                [headingIds]="true"
+                [clipboard]="true"
+                [routerLinkOptions]="{ internalBrowserHandler: true }"
+                (headings)="onHeadings($event)"
+                (ready)="onReady()"
+                (error)="onError($event)"/>
+    }
+  </app-scrollspy-nav-layout>
+</div>
+
+<ng-template #tree let-nodes>
+  <ul class="docs-nav__list">
+    @for (node of nodes; track node.route) {
+      <li>
+        @if (node.children?.length) {
+          <span class="docs-nav__group">
+            @if (node.icon) {
+              <mat-icon aria-hidden="true" class="material-symbols-outlined">{{ node.icon }}</mat-icon>
+            }
+            {{ node.label }}
+          </span>
+          <ng-container [ngTemplateOutlet]="tree" [ngTemplateOutletContext]="{ $implicit: node.children }"/>
+        } @else {
+          <!-- biome-ignore lint/a11y/useValidAnchor: routerLink renders the href -->
+          <a [routerLink]="docsRoute(node.route)" routerLinkActive="docs-nav__link--active"
+             ariaCurrentWhenActive="page" class="docs-nav__link" [title]="node.description ?? node.label">
+            {{ node.label }}
+          </a>
+        }
+      </li>
+    }
+  </ul>
+</ng-template>

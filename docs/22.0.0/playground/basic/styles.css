@@ -1,0 +1,36 @@
+/* The preview gives the page its theme (--pg-* variables); the skeletons follow it through their CSS variables. */
+body {
+  margin: 0;
+  background: var(--pg-bg);
+  color: var(--pg-text);
+  font-family: var(--pg-font);
+}
+
+:root {
+  --ngx-skeleton-loader-color: color-mix(in srgb, var(--pg-text) 10%, var(--pg-bg));
+  --ngx-skeleton-loader-highlight: color-mix(in srgb, var(--pg-bg) 70%, transparent);
+}
+
+main {
+  max-width: 640px;
+  padding: 24px 32px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--pg-text-muted);
+}
+
+section {
+  margin: 0 0 24px;
+  padding: 16px;
+  border: 1px solid var(--pg-border);
+  border-radius: var(--pg-radius);
+  background: var(--pg-surface);
+}

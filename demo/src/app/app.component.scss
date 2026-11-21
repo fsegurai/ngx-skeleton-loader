@@ -1,0 +1,137 @@
+@use '../scss/media-queries' as mq;
+
+// variables
+$viewport-max-width: 1200px;
+$viewport-offset-x: 16px;
+
+:host {
+  display: block;
+}
+
+.lib-title {
+  // Follows the toolbar text color (the primary contrast color).
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  @include mq.for-phone-only {
+    font-size: 16px;
+  }
+}
+
+.lib-logo {
+  flex: 0 0 auto;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.visually-hidden {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.github-icon {
+  display: block;
+  margin: auto;
+}
+
+.mat-toolbar ::ng-deep .mat-toolbar-row {
+  margin: 0 auto;
+  max-width: $viewport-max-width;
+}
+
+.tab-label {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.mat-mdc-tab-nav-bar ::ng-deep {
+  position: sticky;
+  top: 0;
+  z-index: 24;
+
+  .mdc-tab-indicator__content--underline {
+    border-radius: 3px 3px 0 0;
+    border-top-width: 3px;
+  }
+
+  .mat-mdc-tab-link {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: normal;
+    margin: 0 $viewport-offset-x;
+    min-width: 0;
+    opacity: 0.7;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  .mat-mdc-tab-link:hover,
+  .mdc-tab--active {
+    opacity: 1;
+  }
+
+  .mat-mdc-tab-link-container {
+    margin: 0 auto;
+    max-width: $viewport-max-width;
+    overflow: auto;
+  }
+
+  .mdc-tab__ripple {
+    opacity: 0;
+  }
+
+  // Responsive tabs: scroll the links instead of paginating them.
+  .mat-mdc-tab-header-pagination {
+    display: none !important;
+  }
+
+  .mat-mdc-tab-list {
+    transform: unset !important;
+  }
+}
+
+.outlet-wrapper {
+  display: block;
+  margin: $viewport-offset-x auto;
+  max-width: $viewport-max-width;
+  padding: 0 $viewport-offset-x;
+}
+
+.route-container {
+  animation: route-enter 450ms cubic-bezier(0.35, 0, 0.25, 1);
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes route-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

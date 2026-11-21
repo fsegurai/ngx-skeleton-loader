@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a class="lib-title docs-ignore-link-styling" href="/docs" routerLink="/docs">
+      <img class="lib-logo" src="ngx-skeleton-loader.svg" alt="" width="32" height="32">
+      <span>&#64;fsegurai/ngx-skeleton-loader</span>
+    </a>
+    <span class="spacer"></span>
+    <button type="button" class="theme-toggle" mat-icon-button (click)="toggleTheme()"
+            [attr.aria-label]="isDark() ? 'Switch to light theme' : 'Switch to dark theme'"
+            [title]="isDark() ? 'Switch to light theme' : 'Switch to dark theme'">
+      <mat-icon aria-hidden="true" class="material-symbols-outlined">{{ isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
+    <a href="https://github.com/fsegurai/ngx-skeleton-loader" mat-icon-button title="GitHub repository">
+      <span class="visually-hidden">GitHub repository</span>
+      <svg class="github-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="24" height="24"
+           xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"/>
+      </svg>
+    </a>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<nav [tabPanel]="tabPanel" aria-label="Demo pages" backgroundColor="primary" disableRipple fitInkBarToContent
+     mat-stretch-tabs="false" mat-tab-nav-bar>
+  @for (tab of tabs; track tab.path) {
+    <!-- biome-ignore lint/a11y/useValidAnchor: routerLink renders the href -->
+    <a #tabLink="routerLinkActive" [active]="tabLink.isActive" [routerLink]="'/' + tab.path" mat-tab-link
+       routerLinkActive>
+      <span class="tab-label">
+        @if (tab.icon) {
+          <mat-icon aria-hidden="true" class="material-symbols-outlined">{{ tab.icon }}</mat-icon>
+        }
+        <span>{{ tab.label }}</span>
+      </span>
+    </a>
+  }
+</nav>
+
+<mat-tab-nav-panel #tabPanel class="outlet-wrapper">
+  <div class="route-container">
+    <router-outlet/>
+  </div>
+</mat-tab-nav-panel>

@@ -1,0 +1,117 @@
+<h1>Examples</h1>
+<p>
+  Live examples of <code>&lt;ngx-skeleton-loader&gt;</code>. Switch the demo theme in the toolbar to see them on a dark
+  background. Open the <a href="/playground" routerLink="/playground">Playground</a> to try every input.
+</p>
+
+<section aria-labelledby="matrix-title">
+  <h2 id="matrix-title">Appearances and animations</h2>
+  <p>Every <code>appearance</code> with every <code>animation</code>; <code>animation="false"</code> disables it.</p>
+  <div class="matrix">
+    <table>
+      <caption class="visually-hidden">Appearances by animation</caption>
+      <thead>
+        <tr>
+          <th scope="col">animation</th>
+          @for (appearance of appearances; track appearance) {
+            <th scope="col"><code>{{ appearance }}</code></th>
+          }
+        </tr>
+      </thead>
+      <tbody>
+        @for (animation of animations; track animation) {
+          <tr>
+            <th scope="row"><code>{{ animationLabel(animation) }}</code></th>
+            @for (appearance of appearances; track appearance) {
+              <td>
+                <ngx-skeleton-loader [appearance]="appearance" [animation]="animation"
+                                     [count]="appearance === 'line' ? 2 : 3"
+                                     [ariaLabel]="'Loading ' + appearance + ' ' + animationLabel(animation)"/>
+              </td>
+            }
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section aria-labelledby="theming-title">
+  <h2 id="theming-title">Theming with CSS custom properties</h2>
+  <p>
+    Set the <code>--ngx-skeleton-loader-*</code> variables on any ancestor. The demo dark theme only changes these
+    variables, which is how the examples follow the toolbar theme toggle.
+  </p>
+  <div class="grid">
+    @for (sample of themes; track sample.title) {
+      <mat-card appearance="outlined" class="theme-card" [style]="sample.variables">
+        <mat-card-header>
+          <mat-card-title>{{ sample.title }}</mat-card-title>
+          <mat-card-subtitle>{{ sample.description }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="theme-card__shapes">
+            <ngx-skeleton-loader appearance="circle" count="2"/>
+            <ngx-skeleton-loader appearance="square"/>
+          </div>
+          <ngx-skeleton-loader count="2"/>
+          <pre class="theme-card__code"><code>@for (entry of sample.variables | keyvalue; track entry.key) {<span>{{ entry.key }}: {{ entry.value }};</span>}</code></pre>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</section>
+
+<section aria-labelledby="profile-title">
+  <h2 id="profile-title">Profile card</h2>
+  <p>A skeleton that mirrors the layout it replaces. Toggle it to compare both states.</p>
+  <mat-slide-toggle [checked]="profileLoaded()" (change)="profileLoaded.set($event.checked)">
+    Content loaded
+  </mat-slide-toggle>
+
+  <mat-card appearance="outlined" class="profile">
+    <mat-card-content>
+      <div class="profile__header">
+        @if (profileLoaded()) {
+          <div class="profile__avatar" aria-hidden="true">WM</div>
+          <div>
+            <p class="profile__name">Wilson Mendes</p>
+            <p class="profile__subtitle">Front-end engineer</p>
+          </div>
+        } @else {
+          <ngx-skeleton-loader appearance="circle" size="64" ariaLabel="Loading profile picture"/>
+          <div class="profile__lines">
+            <ngx-skeleton-loader ariaLabel="Loading profile name" [theme]="{ width: '200px', height: '16px' }"/>
+            <ngx-skeleton-loader ariaLabel="Loading profile title" [theme]="{ width: '140px', height: '14px' }"/>
+          </div>
+        }
+      </div>
+      @if (profileLoaded()) {
+        <p class="profile__bio">
+          Building accessible interfaces with Angular. Skeletons keep the layout stable while data arrives, so nothing
+          jumps when the content replaces them.
+        </p>
+      } @else {
+        <ngx-skeleton-loader count="3" ariaLabel="Loading profile description"/>
+      }
+    </mat-card-content>
+  </mat-card>
+</section>
+
+<section aria-labelledby="custom-title">
+  <h2 id="custom-title">Custom content</h2>
+  <p>
+    <code>appearance="custom-content"</code> renders a single item that projects its content, for shapes such as an
+    inline SVG.
+  </p>
+  <ngx-skeleton-loader appearance="custom-content" ariaLabel="Loading chart" class="custom-content">
+    <svg viewBox="0 0 240 80" width="240" height="80" aria-hidden="true" focusable="false">
+      <rect x="0" y="40" width="30" height="40" rx="4"/>
+      <rect x="42" y="20" width="30" height="60" rx="4"/>
+      <rect x="84" y="50" width="30" height="30" rx="4"/>
+      <rect x="126" y="10" width="30" height="70" rx="4"/>
+      <rect x="168" y="30" width="30" height="50" rx="4"/>
+      <rect x="210" y="45" width="30" height="35" rx="4"/>
+    </svg>
+  </ngx-skeleton-loader>
+</section>

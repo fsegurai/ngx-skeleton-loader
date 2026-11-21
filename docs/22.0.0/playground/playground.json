@@ -1,0 +1,40 @@
+{
+  "imports": {
+    "@angular/compiler": "https://cdn.jsdelivr.net/npm/@angular/compiler@22.3.0/fesm2022/compiler.mjs",
+    "@angular/core": "https://cdn.jsdelivr.net/npm/@angular/core@22.3.0/fesm2022/core.mjs",
+    "@angular/core/primitives/di": "https://cdn.jsdelivr.net/npm/@angular/core@22.3.0/fesm2022/primitives-di.mjs",
+    "@angular/core/primitives/signals": "https://cdn.jsdelivr.net/npm/@angular/core@22.3.0/fesm2022/primitives-signals.mjs",
+    "@angular/common": "https://cdn.jsdelivr.net/npm/@angular/common@22.3.0/fesm2022/common.mjs",
+    "@angular/common/http": "https://cdn.jsdelivr.net/npm/@angular/common@22.3.0/fesm2022/http.mjs",
+    "@angular/platform-browser": "https://cdn.jsdelivr.net/npm/@angular/platform-browser@22.3.0/fesm2022/platform-browser.mjs",
+    "rxjs": "https://cdn.jsdelivr.net/npm/rxjs@7.8.2/+esm",
+    "rxjs/operators": "https://cdn.jsdelivr.net/npm/rxjs@7.8.2/+esm",
+    "@fsegurai/ngx-skeleton-loader": "https://cdn.jsdelivr.net/npm/@fsegurai/ngx-skeleton-loader@{version}/fesm2022/fsegurai-ngx-skeleton-loader.mjs"
+  },
+  "samples": [
+    {
+      "id": "basic",
+      "label": "Basic usage",
+      "description": "Lines, a count and the three selectors of SkeletonLoaderComponent, with a custom loading text and label. The first run downloads Angular (about 1 MB).",
+      "files": ["main.js", "styles.css", "index.html"]
+    },
+    {
+      "id": "appearances-animations",
+      "label": "Appearances and animations",
+      "description": "Switch the appearance (line, circle, square), the animation (progress, pulse, their dark variants or none), the count and the size of circles and squares at runtime.",
+      "files": ["main.js", "styles.css", "index.html"]
+    },
+    {
+      "id": "theming",
+      "label": "Theming",
+      "description": "Restyle the placeholders with --ngx-skeleton-loader-* CSS variables (preview colors, a custom palette, line height, radius and duration) and the theme input, merged over a provider theme with extendsFromRoot.",
+      "files": ["main.js", "styles.css", "index.html"]
+    },
+    {
+      "id": "loading-states",
+      "label": "Loading states",
+      "description": "Simulated requests swap skeletons and content with @if, a custom-content card placeholder, and application defaults set once with provideSkeletonLoader.",
+      "files": ["main.js", "styles.css", "index.html"]
+    }
+  ]
+}

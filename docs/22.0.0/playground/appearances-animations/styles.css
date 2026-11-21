@@ -1,0 +1,63 @@
+/* The preview gives the page its theme (--pg-* variables); the skeletons follow it through their CSS variables. */
+body {
+  margin: 0;
+  background: var(--pg-bg);
+  color: var(--pg-text);
+  font-family: var(--pg-font);
+}
+
+:root {
+  --ngx-skeleton-loader-color: color-mix(in srgb, var(--pg-text) 10%, var(--pg-bg));
+  --ngx-skeleton-loader-highlight: color-mix(in srgb, var(--pg-bg) 70%, transparent);
+}
+
+main {
+  max-width: 720px;
+  padding: 24px 32px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+}
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border: 1px solid var(--pg-border);
+  border-radius: var(--pg-radius);
+  background: var(--pg-surface);
+}
+
+legend {
+  padding: 0 6px;
+  font-weight: 600;
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+input {
+  accent-color: var(--pg-primary);
+}
+
+input[type="number"] {
+  width: 4rem;
+}
+
+.preview {
+  padding: 16px;
+  border: 1px dashed var(--pg-border);
+  border-radius: var(--pg-radius);
+}
+
+/* Circles and squares are inline blocks: they wrap like words. */
+.preview.shapes {
+  line-height: 0;
+}

@@ -1,0 +1,77 @@
+/* The preview gives the page its theme (--pg-* variables, body colors and font). */
+body {
+  margin: 0;
+  background: var(--pg-bg);
+  color: var(--pg-text);
+  font-family: var(--pg-font);
+}
+
+main {
+  max-width: 720px;
+  padding: 24px 32px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+}
+
+h2 {
+  margin: 16px 0 8px;
+  font-size: 0.95rem;
+  color: var(--pg-text-muted);
+}
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border: 1px solid var(--pg-border);
+  border-radius: var(--pg-radius);
+  background: var(--pg-surface);
+}
+
+legend {
+  padding: 0 6px;
+  font-weight: 600;
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--pg-mono);
+  font-size: 0.85rem;
+}
+
+input {
+  accent-color: var(--pg-primary);
+}
+
+section {
+  padding: 16px;
+  border: 1px solid var(--pg-border);
+  border-radius: var(--pg-radius);
+  background: var(--pg-surface);
+}
+
+/* Preview: the skeletons take the preview theme colors, light or dark. */
+.preview {
+  --ngx-skeleton-loader-color: color-mix(in srgb, var(--pg-text) 10%, var(--pg-surface));
+  --ngx-skeleton-loader-highlight: color-mix(in srgb, var(--pg-surface) 70%, transparent);
+}
+
+/* library-default: no variables, the built-in light colors apply. */
+
+/* A custom palette: every color is a CSS custom property. */
+.sunset {
+  --ngx-skeleton-loader-color: #fed7aa;
+  --ngx-skeleton-loader-highlight: rgb(255 247 237 / 80%);
+  background: #fff7ed;
+}
+
+.sunset h2 {
+  color: #9a3412;
+}

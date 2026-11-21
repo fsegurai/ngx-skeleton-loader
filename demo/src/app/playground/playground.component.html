@@ -1,0 +1,126 @@
+<h1>Playground</h1>
+<p>Change any input of <code>&lt;ngx-skeleton-loader&gt;</code> and copy the resulting markup.</p>
+
+<div class="playground">
+  <mat-card appearance="outlined" class="playground-controls">
+    <mat-card-content>
+      <h2 class="control-title" id="appearance-label">Appearance</h2>
+      <mat-button-toggle-group name="appearance" aria-labelledby="appearance-label" hideSingleSelectionIndicator
+                               [value]="appearance()" (change)="appearance.set($event.value)">
+        @for (item of appearances; track item) {
+          <mat-button-toggle [value]="item" [attr.value]="item">{{ item }}</mat-button-toggle>
+        }
+      </mat-button-toggle-group>
+
+      <h2 class="control-title" id="animation-label">Animation</h2>
+      <mat-button-toggle-group name="animation" aria-labelledby="animation-label" hideSingleSelectionIndicator
+                               [value]="animation()" (change)="animation.set($event.value)">
+        @for (item of animations; track item) {
+          <mat-button-toggle [value]="item" [attr.value]="item">{{ animationLabel(item) }}</mat-button-toggle>
+        }
+      </mat-button-toggle-group>
+
+      <div class="control-row">
+        <mat-form-field>
+          <mat-label>Count</mat-label>
+          <input matInput name="count" type="number" min="1" max="50" [value]="count()" (input)="setCount($event)">
+          @if (appearance() === 'custom-content') {
+            <mat-hint>custom-content always renders one item</mat-hint>
+          }
+        </mat-form-field>
+        <mat-slide-toggle [checked]="loading()" (change)="loading.set($event.checked)">Loading</mat-slide-toggle>
+      </div>
+
+      <mat-form-field>
+        <mat-label>Loading text</mat-label>
+        <input matInput name="loadingText" placeholder="Loading content..." [value]="loadingText()"
+               (input)="loadingText.set(text($event))">
+        <mat-hint>Announced to screen readers</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>ARIA label</mat-label>
+        <input matInput name="ariaLabel" placeholder="loading" [value]="ariaLabel()"
+               (input)="ariaLabel.set(text($event))">
+        <mat-hint>Accessible name of the status region</mat-hint>
+      </mat-form-field>
+
+      <mat-slide-toggle class="announce-toggle" name="announce" [checked]="announce()" (change)="announce.set($event.checked)">
+        Announce (own status region)
+      </mat-slide-toggle>
+
+      <label class="slider-label" [class.slider-label--disabled]="!hasSize()">
+        Size (circle and square): {{ size() ?? 40 }}px
+        <mat-slider min="16" max="160" step="4" discrete [disabled]="!hasSize()">
+          <input matSliderThumb name="size" [value]="size() ?? 40" (valueChange)="size.set($event)">
+        </mat-slider>
+      </label>
+
+      <h2 class="control-title">Theme (CSS custom properties)</h2>
+      <label class="color-label">
+        <input name="color" type="color" [value]="color() ?? themeDefaults.color" (input)="color.set(text($event))">
+        Item color
+      </label>
+
+      <label class="slider-label">
+        Line height: {{ height() ?? themeDefaults.height }}px
+        <mat-slider min="4" max="80" step="2" discrete>
+          <input matSliderThumb name="height" [value]="height() ?? themeDefaults.height" (valueChange)="height.set($event)">
+        </mat-slider>
+      </label>
+
+      <label class="slider-label">
+        Radius: {{ radius() ?? themeDefaults.radius }}px
+        <mat-slider min="0" max="40" step="1" discrete>
+          <input matSliderThumb name="radius" [value]="radius() ?? themeDefaults.radius" (valueChange)="radius.set($event)">
+        </mat-slider>
+      </label>
+
+      <label class="slider-label">
+        Duration: {{ duration() ?? themeDefaults.duration }}s
+        <mat-slider min="0.5" max="6" step="0.5" discrete>
+          <input matSliderThumb name="duration" [value]="duration() ?? themeDefaults.duration"
+                 (valueChange)="duration.set($event)">
+        </mat-slider>
+      </label>
+
+      <button mat-stroked-button type="button" (click)="reset()">Reset</button>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="playground-output">
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Preview</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="playground-preview">
+        @if (loading()) {
+          <ngx-skeleton-loader [count]="count()" [appearance]="appearance()" [animation]="animation()"
+                               [size]="hasSize() ? size() : null" [loadingText]="loadingText() || undefined"
+                               [ariaLabel]="ariaLabel() || undefined" [announce]="announce()" [theme]="theme()">
+            <svg class="custom-shape" viewBox="0 0 200 60" width="200" height="60" aria-hidden="true" focusable="false">
+              <circle cx="30" cy="30" r="26"/>
+              <rect x="70" y="10" width="120" height="14" rx="4"/>
+              <rect x="70" y="36" width="80" height="14" rx="4"/>
+            </svg>
+          </ngx-skeleton-loader>
+        } @else {
+          <p class="loaded-content">Content loaded. The skeleton is removed and the status region is gone.</p>
+        }
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>HTML</mat-card-title>
+        <button class="copy-button" mat-icon-button type="button" aria-label="Copy the snippet" title="Copy the snippet"
+                (click)="copySnippet()">
+          <mat-icon aria-hidden="true" class="material-symbols-outlined">content_copy</mat-icon>
+        </button>
+      </mat-card-header>
+      <mat-card-content>
+        <pre class="playground-snippet"><code>{{ snippet() }}</code></pre>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>&#64;fsegurai/ngx-skeleton-loader | Demo</title>
+  <base href="/">
+  <meta name="description" content="Angular skeleton loader component for displaying accessible, themeable loading states.">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Roboto:300,400,500" rel="stylesheet">
+  <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+  />
+</head>
+<body class="mat-app-background">
+<script>
+  // Apply the stored theme before the app boots, so there is no light/dark flash.
+  // Keep the key and values in sync with LOCAL_STORAGE_THEME_KEY, DEFAULT_THEME and Theme in demo/src/app.
+  (() => {
+    var theme = 'light';
+    var stored;
+    try {
+      stored = localStorage.getItem('ngx-skeleton-loader:theme');
+      if (stored === 'light' || stored === 'dark') theme = stored;
+    } catch {}
+    document.body.classList.add(`${theme}-theme`);
+  })();
+</script>
+<app-root></app-root>
+</body>
+</html>
